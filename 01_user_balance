@@ -1,0 +1,27 @@
+"""
+Component 1 of Lucky Unicorn game,
+Set amount user wants to play with.
+Created by Amy Jorgensen
+01/08/2020
+"""
+
+
+# Integer checking function
+def intcheck(question, low, high):
+    valid = False
+    while not valid:
+        error = "Oppsie! Please enter a whole number between {} and {}".format(low, high)
+        try:
+            response = int(input(question.format(low, high)))
+            if low <= response <= high:
+                return response
+            else:
+                print(error)
+
+        except ValueError:
+            print(error)
+
+
+# main routine
+user_balance = intcheck("\nHow much money would you like to play with? ", 1, 10)
+print("Balance = ${}".format(user_balance))
